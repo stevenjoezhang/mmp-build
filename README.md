@@ -69,3 +69,40 @@ mmp clean $name
 
 在Markdown文件中使用Front Matter存储元信息是一种极为方便的做法。  
 Marked是一个将Markdown文件转为html的node模块。在此基础上开发了Markdown转TeX的核心。
+
+## Known Issues
+
+`marked`会强制将`&<>"'`这些字符转码（目的是防止污染`html`）。为防止问题，使用了极为不优美的方法把这些字符换回来。
+
+```javascript
+/**
+ * Helpers
+ */
+
+function escape(html, encode) {
+  if (encode) {
+    if (escape.escapeTest.test(html)) {
+      return html.replace(escape.escapeReplace, function (ch) { return escape.replacements[ch]; });
+    }
+  } else {
+    if (escape.escapeTestNoEncode.test(html)) {
+      return html.replace(escape.escapeReplaceNoEncode, function (ch) { return escape.replacements[ch]; });
+    }
+  }
+
+  return html;
+}
+
+escape.escapeTest = /[&<>"']/;
+escape.escapeReplace = /[&<>"']/g;
+escape.replacements = {
+  '&': '&amp;',
+  '<': '&lt;',
+  '>': '&gt;',
+  '"': '&quot;',
+  "'": '&#39;'
+};
+
+escape.escapeTestNoEncode = /[<>"']|&(?!#?\w+;)/;
+escape.escapeReplaceNoEncode = /[<>"']|&(?!#?\w+;)/g;
+```

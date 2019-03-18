@@ -27,7 +27,7 @@ function init(arg) {
 }
 
 function build(arg) {
-	require("./lib/build")(arg[0], {build: !arg[1]});
+	require("./lib/build")(arg);
 }
 
 function clean(arg) {
