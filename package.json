@@ -1,5 +1,5 @@
 {
-	"name": "MMP",
+	"name": "mmp-cli",
 	"version": "0.0.1",
 	"description": "Convert markdown file to tex",
 	"main": "index.js",
@@ -8,7 +8,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/stevenjoezhang/MMP"
+		"url": "git+https://github.com/stevenjoezhang/mmp-cli"
 	},
 	"keywords": [
 		"markdown",
@@ -20,6 +20,7 @@
 	"author": "Mimi",
 	"license": "GPL-3.0-or-later",
 	"dependencies": {
-		"js-yaml": "^3.12.1"
+		"js-yaml": "^3.12.1",
+		"marked": "^0.6.1"
 	}
 }
