@@ -1,5 +1,10 @@
 # MMP
 
+[![Npm Version](https://img.shields.io/npm/v/mmp-build.svg)](https://npmjs.org/package/mmp-build)
+[![Npm Downloads Month](https://img.shields.io/npm/dm/mmp-build.svg)](https://npmjs.org/package/mmp-build)
+[![Npm Downloads Total](https://img.shields.io/npm/dt/mmp-build.svg)](https://npmjs.org/package/mmp-build)
+[![License](https://img.shields.io/npm/l/mmp-build.svg)](https://npmjs.org/package/mmp-build)
+
 MMP的全称是Mimi Markdown Paper，旨在通过简单的命令将Markdown文件转为TeX，再通过`xelatex`编译为pdf。据研究表明，这可以将写文章的效率提升1400%。
 
 ## 依赖
@@ -59,7 +64,6 @@ mmp build $name -t
 mmp build $name --html
 mmp build $name -h
 ```
-如果要渲染数学公式，请手动向`html`页面添加`mathjax`
 - 在当前目录清除与`$name.md`有关的编译缓存，只留下（如果存在）`$name.md`，`$name.tex`，`$name.bib`和`$name.pdf`
 ```bash
 mmp clean $name
@@ -106,3 +110,7 @@ escape.replacements = {
 escape.escapeTestNoEncode = /[<>"']|&(?!#?\w+;)/;
 escape.escapeReplaceNoEncode = /[<>"']|&(?!#?\w+;)/g;
 ```
+
+## TODO
+
+- [ ] Windows support
