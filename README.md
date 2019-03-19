@@ -11,11 +11,11 @@ MMP的全称是Mimi Markdown Paper，旨在通过简单的命令将Markdown文�
 
 执行
 ```bash
-npm install mmp-cli -g
+npm install mmp-build -g
 ```
 如果你的`npm`全局模块目录（例如`/usr/local/lib/node_modules`）的权限设置不同，请加上`sudo`：
 ```bash
-sudo npm install mmp-cli -g
+sudo npm install mmp-build -g
 ```
 
 ## 使用
