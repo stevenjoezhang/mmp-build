@@ -1,6 +1,6 @@
 {
 	"name": "mmp-build",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Convert markdown file to tex",
 	"main": "index.js",
 	"scripts": {
