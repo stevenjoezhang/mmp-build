@@ -4,6 +4,7 @@ echo -e "\033[31m"
 xelatex --interaction=batchmode $1
 code1=$?
 if [ $2 ] ;then
+	open $1.pdf
 	exit
 fi
 echo -e "\033[33m"

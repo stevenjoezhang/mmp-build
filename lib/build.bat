@@ -4,6 +4,7 @@ color 04
 xelatex --interaction=batchmode %1
 set /A code1=%errorlevel%
 if %2 (
+	start %1.pdf
 	exit
 )
 color 06
