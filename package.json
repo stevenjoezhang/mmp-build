@@ -21,6 +21,6 @@
 	"license": "GPL-3.0-or-later",
 	"dependencies": {
 		"js-yaml": "^3.12.1",
-		"marked": "^0.6.1"
+		"marked": "^0.7.0"
 	}
 }
