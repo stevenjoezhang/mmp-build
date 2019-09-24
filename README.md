@@ -74,6 +74,10 @@ mmp clean $name
 在Markdown文件中使用Front Matter存储元信息是一种极为方便的做法。  
 Marked是一个将Markdown文件转为html的node模块。在此基础上开发了Markdown转TeX的核心。
 
+## License
+Released under the GNU General Public License v3  
+http://www.gnu.org/licenses/gpl-3.0.html
+
 ## Known Issues
 
 `marked`会强制将`&<>"'`这些字符转码（目的是防止污染`html`）。为防止问题，使用了极为不优美的方法把这些字符换回来。
