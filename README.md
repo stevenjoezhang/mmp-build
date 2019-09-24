@@ -18,10 +18,6 @@ MMP的全称是Mimi Markdown Paper，旨在通过简单的命令将Markdown文�
 ```bash
 npm install mmp-build -g
 ```
-如果你的`npm`全局模块目录（例如`/usr/local/lib/node_modules`）的权限设置不同，请加上`sudo`：
-```bash
-sudo npm install mmp-build -g
-```
 
 ## 使用
 
@@ -36,38 +32,38 @@ sudo npm install mmp-build -g
 当然，创建文件的部分不一定需要你来手动完成。你可以通过`mmp`的子命令执行。下面是全部用法：
 
 - 在当前目录新建`$name.md`
-```bash
-mmp init $name
-```
+  ```bash
+  mmp init $name
+  ```
 - 在当前目录新建`$name.md`和`$name.bib`
-```bash
-mmp init $name --bib
-mmp init $name -b
-```
+  ```bash
+  mmp init $name --bib
+  mmp init $name -b
+  ```
 - 在当前目录编译`$name.md`为`$name.tex`，再编译为`$name.pdf`
-```bash
-mmp build $name
-```
-注意，如果在markdown文件的From Matter中设置了`bibfile`，会自动执行多次`xelatex`
+  ```bash
+  mmp build $name
+  ```
+  注意，如果在markdown文件的From Matter中设置了`bibfile`，会自动执行多次`xelatex`
 - 与前面相同，但在执行`xelatex`时使用静默模式，减少输出（报错信息也不会显示）
-```bash
-mmp build $name --quiet
-mmp build $name -q
-```
+  ```bash
+  mmp build $name --quiet
+  mmp build $name -q
+  ```
 - 在当前目录编译`$name.md`为`$name.tex`，不进行其他操作
-```bash
-mmp build $name --tex
-mmp build $name -t
-```
+  ```bash
+  mmp build $name --tex
+  mmp build $name -t
+  ```
 - 在当前目录编译`$name.md`为`$name.html`，不进行其他操作
-```bash
-mmp build $name --html
-mmp build $name -h
-```
+  ```bash
+  mmp build $name --html
+  mmp build $name -h
+  ```
 - 在当前目录清除与`$name.md`有关的编译缓存，只留下（如果存在）`$name.md`，`$name.tex`，`$name.bib`和`$name.pdf`
-```bash
-mmp clean $name
-```
+  ```bash
+  mmp clean $name
+  ```
 
 ## 鸣谢
 
@@ -75,6 +71,7 @@ mmp clean $name
 Marked是一个将Markdown文件转为html的node模块。在此基础上开发了Markdown转TeX的核心。
 
 ## License
+
 Released under the GNU General Public License v3  
 http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -118,3 +115,5 @@ escape.escapeReplaceNoEncode = /[<>"']|&(?!#?\w+;)/g;
 ## TODO
 
 - [ ] Windows support
+- [ ] Nunjucks template support
+- [ ] Plugins support (e.g. iCircuitikz)
