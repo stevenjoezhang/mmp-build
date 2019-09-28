@@ -1,4 +1,4 @@
-var help = `
+const help = `
 Mimi Markdown Paper v${require('./package.json').version}
 
 usage: mmp <command> <name> [<args>]
@@ -22,26 +22,14 @@ command: init | build | clean
 name: name of the workspace, must be the same as .md file
 `;
 
-function init(arg) {
-	require("./lib/init")(arg);
-}
-
-function build(arg) {
-	require("./lib/build")(arg);
-}
-
-function clean(arg) {
-	require("./lib/clean")(arg);
-}
-
 function entry() {
-	var arg = process.argv.slice(2);
-	switch (arg.shift()) {
-		case "init": init(arg); break;
-		case "build": build(arg); break;
-		case "clean": clean(arg); break;
-		default: console.log(help); break;
-	}
+  var arg = process.argv.slice(2);
+  switch (arg.shift()) {
+    case "init" : require("./lib/init")(arg) ; break;
+    case "build": require("./lib/build")(arg); break;
+    case "clean": require("./lib/clean")(arg); break;
+    default     : console.log(help)          ; break;
+  }
 }
 
 module.exports = entry;

@@ -1,26 +1,26 @@
 {
-	"name": "mmp-build",
-	"version": "0.0.2",
-	"description": "Convert markdown file to tex",
-	"main": "index.js",
-	"scripts": {
-		"start": "node index.js"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/stevenjoezhang/mmp-build"
-	},
-	"keywords": [
-		"markdown",
-		"tex"
-	],
-	"bin": {
-		"mmp": "./bin/mmp"
-	},
-	"author": "Mimi <zsq@zsq.im> https://zhangshuqiao.org",
-	"license": "GPL-3.0-or-later",
-	"dependencies": {
-		"js-yaml": "^3.12.1",
-		"marked": "^0.7.0"
-	}
+  "name": "mmp-build",
+  "version": "0.0.2",
+  "description": "Convert markdown file to tex",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevenjoezhang/mmp-build"
+  },
+  "keywords": [
+    "markdown",
+    "tex"
+  ],
+  "bin": {
+    "mmp": "./bin/mmp"
+  },
+  "author": "Mimi <zsq@zsq.im> https://zhangshuqiao.org",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "js-yaml": "^3.12.1",
+    "marked": "^0.7.0"
+  }
 }
