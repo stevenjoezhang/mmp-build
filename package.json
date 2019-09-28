@@ -20,7 +20,7 @@
   "author": "Mimi <zsq@zsq.im> https://zhangshuqiao.org",
   "license": "GPL-3.0-or-later",
   "dependencies": {
-    "js-yaml": "^3.12.1",
-    "marked": "^0.7.0"
+    "marked": "^0.7.0",
+    "hexo-front-matter": "^1.0.0"
   }
 }
