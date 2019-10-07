@@ -1,9 +1,9 @@
 # MMP
 
-[![Npm Version](https://img.shields.io/npm/v/mmp-build.svg)](https://npmjs.org/package/mmp-build)
-[![Npm Downloads Month](https://img.shields.io/npm/dm/mmp-build.svg)](https://npmjs.org/package/mmp-build)
-[![Npm Downloads Total](https://img.shields.io/npm/dt/mmp-build.svg)](https://npmjs.org/package/mmp-build)
-[![License](https://img.shields.io/npm/l/mmp-build.svg)](https://npmjs.org/package/mmp-build)
+[![Npm Version](https://img.shields.io/npm/v/mmp-build?style=flat-square)](https://npmjs.org/package/mmp-build)
+[![Npm Downloads Month](https://img.shields.io/npm/dm/mmp-build?style=flat-square)](https://npmjs.org/package/mmp-build)
+[![Npm Downloads Total](https://img.shields.io/npm/dt/mmp-build?style=flat-square)](https://npmjs.org/package/mmp-build)
+[![License](https://img.shields.io/npm/l/mmp-build?style=flat-square)](https://npmjs.org/package/mmp-build)
 
 MMP的全称是Mimi Markdown Paper，旨在通过简单的命令将Markdown文件转为TeX，再通过`xelatex`编译为pdf。据研究表明，这可以将写文章的效率提升1400%。
 
