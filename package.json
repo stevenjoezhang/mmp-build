@@ -1,7 +1,7 @@
 {
   "name": "mmp-build",
   "version": "0.0.3",
-  "description": "Convert markdown file to tex",
+  "description": "Convert markdown-formatted documents to TeX",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -17,10 +17,10 @@
   "bin": {
     "mmp": "./bin/mmp"
   },
-  "author": "Mimi <zsq@zsq.im> https://zhangshuqiao.org",
+  "author": "Mimi <stevenjoezhang@gmail.com> https://zhangshuqiao.org",
   "license": "GPL-3.0-or-later",
   "dependencies": {
-    "marked": "^0.7.0",
-    "hexo-front-matter": "^1.0.0"
+    "hexo-front-matter": "^1.0.0",
+    "marked": "^0.7.0"
   }
 }
