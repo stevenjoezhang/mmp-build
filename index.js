@@ -13,7 +13,6 @@ command: init | build | clean
 
   build          Build markdown file to pdf
   args:
-    --quiet, -q  Reduce the output of xelatex
     --tex, -t    Do not build pdf
     --html, -h   Build html instead of pdf
 

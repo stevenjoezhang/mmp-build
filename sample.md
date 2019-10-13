@@ -1,15 +1,15 @@
 ---
-title: Introduction to mmp
+title: Introduction to MMP
 author: Mimi
-date: 2019-02-28
-abstract: How to use mmp
+date: 1984-01-24
+abstract: How to use MMP
 keywords: Markdown, TeX
 bibfile:
   style: ieeetr
   name:
 ---
 
-## Welcome to use mmp
+## Welcome to use MMP
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere quod nam commodi, iste odio officiis, illum voluptates fuga eius sapiente accusamus tenetur error repudiandae illo minus veniam maiores impedit enim.
 

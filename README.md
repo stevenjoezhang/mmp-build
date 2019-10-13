@@ -23,13 +23,27 @@ npm install mmp-build -g
 
 ### 准备
 
-你的项目需要有一个名字，我们就叫他`$name`好了。你需要准备一个名为`$name.md`的文件，它需要符合Markdown的语法，并且可以包含LaTeX的语法。如果有参考文献的话，在同一目录下需要存在名为`$name.bib`的BiBTeX文件。
-
-接下来需要介绍Markdown文件的语法。我们使用了Front Matter，这来源于静态博客框架Hexo。它看起来像这样：
+你的项目需要有一个名字，我们就叫他`$name`好了。你需要准备一个名为`$name.md`的文档；如果有参考文献的话，在同一目录下还需要存在名为`$name.bib`的BiBTeX文件。  
+接下来介绍`$name.md`文档应包含的内容。我们采用了一个称为Front Matter的部分，它看起来像这样：
+```
+---
+title: Introduction to MMP
+author: Mimi
+date: 1984-01-24
+abstract: How to use MMP
+keywords: Markdown, TeX
+bibfile:
+  style: ieeetr
+  name:
+---
+```
+Front Matter包含了文章的元信息。在它之后就是文章的内容，需要符合Markdown的语法，并且可以包含LaTeX的语法。
 
 ### 命令
 
 当然，创建文件的部分不一定需要你来手动完成。你可以通过`mmp`的子命令执行。下面是全部用法：
+
+#### `init`命令
 
 - 在当前目录新建`$name.md`
   ```bash
@@ -40,16 +54,14 @@ npm install mmp-build -g
   mmp init $name --bib
   mmp init $name -b
   ```
+
+#### `build`命令
+
 - 在当前目录编译`$name.md`为`$name.tex`，再编译为`$name.pdf`
   ```bash
   mmp build $name
   ```
-  注意，如果在markdown文件的From Matter中设置了`bibfile`，会自动执行多次`xelatex`
-- 与前面相同，但在执行`xelatex`时使用静默模式，减少输出（报错信息也不会显示）
-  ```bash
-  mmp build $name --quiet
-  mmp build $name -q
-  ```
+  如果在markdown文件的From Matter中设置了`bibfile`，程序会自动执行多次`xelatex`
 - 在当前目录编译`$name.md`为`$name.tex`，不进行其他操作
   ```bash
   mmp build $name --tex
@@ -60,6 +72,9 @@ npm install mmp-build -g
   mmp build $name --html
   mmp build $name -h
   ```
+
+#### `clean`命令
+
 - 在当前目录清除与`$name.md`有关的编译缓存，只留下（如果存在）`$name.md`，`$name.tex`，`$name.bib`和`$name.pdf`
   ```bash
   mmp clean $name
@@ -67,8 +82,8 @@ npm install mmp-build -g
 
 ## 鸣谢
 
-在Markdown文件中使用Front Matter存储元信息是一种极为方便的做法。  
-Marked是一个将Markdown文件转为html的node模块。在此基础上开发了Markdown转TeX的核心。
+在Markdown文件中使用Front Matter存储元信息是一种极为方便的做法，本项目使用的代码来源于静态博客框架Hexo。  
+Marked是一个将Markdown文档转为html的node模块。在此基础上开发了Markdown转TeX的核心。
 
 ## License
 
@@ -77,7 +92,7 @@ http://www.gnu.org/licenses/gpl-3.0.html
 
 ## Known Issues
 
-`marked`会强制将`&<>"'`这些字符转码（目的是防止污染`html`）。为防止问题，使用了极为不优美的方法把这些字符换回来。
+`marked`会强制将`&<>"'`这些字符转码（目的是防止污染`html`）。由于这对于TeX而言是不必要的，本项目使用了极为不优美的方法把这些字符换回来。
 
 ```javascript
 /**
