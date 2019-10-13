@@ -114,6 +114,6 @@ escape.escapeReplaceNoEncode = /[<>"']|&(?!#?\w+;)/g;
 
 ## TODO
 
-- [ ] Windows support
+- [x] Windows support
 - [ ] Nunjucks template support
 - [ ] Plugins support (e.g. iCircuitikz)
