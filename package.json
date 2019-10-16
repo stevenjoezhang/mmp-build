@@ -1,7 +1,7 @@
 {
   "name": "mmp-build",
   "version": "0.0.4",
-  "description": "Convert markdown-formatted documents to TeX",
+  "description": "Convert markdown-formatted documents to TeX.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -19,6 +19,10 @@
   },
   "author": "Mimi <stevenjoezhang@gmail.com> https://zhangshuqiao.org",
   "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/stevenjoezhang/mmp-build/issues"
+  },
+  "homepage": "https://github.com/stevenjoezhang/mmp-build#readme",
   "dependencies": {
     "hexo-front-matter": "^1.0.0",
     "marked": "^0.7.0"
