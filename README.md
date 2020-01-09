@@ -23,7 +23,7 @@ npm install mmp-build -g
 
 ### 准备
 
-你的项目需要有一个名字，我们就叫他 `$name` 好了。你需要准备一个名为 `$name.md` 的文档；如果有参考文献的话，在同一目录下还需要存在名为 `$name.bib` 的BiBTeX文件。  
+你的项目需要有一个名字，我们就叫他 `$name` 好了。你需要准备一个名为 `$name.md` 的文档；如果有参考文献的话，在同一目录下还需要存在名为 `$name.bib` 的 BiBTeX 文件。  
 接下来介绍 `$name.md` 文档应包含的内容。我们采用了一个称为 Front Matter 的部分，它看起来像这样：
 ```
 ---
@@ -83,7 +83,7 @@ Front Matter 包含了文章的元信息。在它之后就是文章的内容，�
 ## 鸣谢
 
 在 Markdown 文件中使用 Front Matter 存储元信息是一种极为方便的做法，本项目使用的代码来源于静态博客框架 Hexo。  
-Marked 是一个将 Markdown 文档转为 html 的 NodeJs 模块。在此基础上开发了 Markdown 转 TeX 的核心。
+Marked 是一个将 Markdown 文档转为 html 的 Node.js 模块。在此基础上开发了 Markdown 转 TeX 的核心。
 
 ## License
 
@@ -131,4 +131,4 @@ escape.escapeReplaceNoEncode = /[<>"']|&(?!#?\w+;)/g;
 
 - [x] Windows support
 - [ ] Nunjucks template support
-- [ ] Plugins support (e.g. iCircuitikz)
+- [ ] Plugins support
