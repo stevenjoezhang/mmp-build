@@ -9,12 +9,13 @@ command: init | build | clean
 
   init           Create an empty MMP workspace
   args:
-    --bib, -b    Create workspace with bibtex
+    -b, --bib    Create workspace with bibtex
 
   build          Build markdown file to pdf
   args:
-    --tex, -t    Do not build pdf
-    --html, -h   Build html instead of pdf
+    -q, --quiet  Reduce terminal output from XeLaTeX
+    -t, --tex    Do not build pdf
+    -h, --html   Build html instead of pdf
 
   clean          Clean up all files
 
