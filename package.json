@@ -1,6 +1,6 @@
 {
   "name": "mmp-build",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Convert markdown-formatted documents to TeX.",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/stevenjoezhang/mmp-build#readme",
   "dependencies": {
+    "chalk": "^3.0.0",
     "hexo-front-matter": "^1.0.0",
     "marked": "^0.8.0"
   }
