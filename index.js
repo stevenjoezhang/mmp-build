@@ -23,7 +23,7 @@ name: name of the workspace, must be the same as .md file
 `;
 
 function entry() {
-  var arg = process.argv.slice(2);
+  let arg = process.argv.slice(2);
   switch (arg.shift()) {
     case "init" : require("./lib/init")(arg) ; break;
     case "build": require("./lib/build")(arg); break;
