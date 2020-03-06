@@ -99,41 +99,14 @@ http://www.gnu.org/licenses/gpl-3.0.html
 
 `marked` 会强制将 `&<>"'` 这些字符转码（目的是防止污染 `html`）。由于这对于 TeX 而言是不必要的，本项目使用了极为不优美的方法把这些字符换回来。
 
-```javascript
-/**
- * Helpers
- */
+https://github.com/markedjs/marked/blob/416003b50daea11c698b4f12ca3b92ce7e67c5cb/src/helpers.js#L1-L28
 
-function escape(html, encode) {
-  if (encode) {
-    if (escape.escapeTest.test(html)) {
-      return html.replace(escape.escapeReplace, function (ch) { return escape.replacements[ch]; });
-    }
-  } else {
-    if (escape.escapeTestNoEncode.test(html)) {
-      return html.replace(escape.escapeReplaceNoEncode, function (ch) { return escape.replacements[ch]; });
-    }
-  }
+有关 Front Matter 的仓库
 
-  return html;
-}
-
-escape.escapeTest = /[&<>"']/;
-escape.escapeReplace = /[&<>"']/g;
-escape.replacements = {
-  '&': '&amp;',
-  '<': '&lt;',
-  '>': '&gt;',
-  '"': '&quot;',
-  "'": '&#39;'
-};
-
-escape.escapeTestNoEncode = /[<>"']|&(?!#?\w+;)/;
-escape.escapeReplaceNoEncode = /[<>"']|&(?!#?\w+;)/g;
-```
+https://github.com/hexojs/hexo-front-matter
+https://github.com/jxson/front-matter
 
 ## TODO
 
 - [x] Windows support
-- [ ] Nunjucks template support
 - [ ] Plugins support
