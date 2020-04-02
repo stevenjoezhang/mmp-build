@@ -1,5 +1,5 @@
 const help = `
-Mimi Markdown Paper v${require('./package.json').version}
+Mimi Markdown Paper v${require("./package.json").version}
 
 usage: mmp <command> <name> [<args>]
 
