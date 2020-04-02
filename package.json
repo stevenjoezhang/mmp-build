@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/stevenjoezhang/mmp-build#readme",
   "dependencies": {
-    "chalk": "^3.0.0",
+    "chalk": "^4.0.0",
     "hexo-front-matter": "^1.0.0",
     "highlight.js": "^9.18.1",
     "jsdom": "^16.2.2",
