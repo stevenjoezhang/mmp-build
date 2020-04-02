@@ -26,6 +26,7 @@
   "dependencies": {
     "chalk": "^3.0.0",
     "hexo-front-matter": "^1.0.0",
+    "highlight.js": "^9.18.1",
     "marked": "^0.8.2",
     "mathjax-full": "^3.0.1",
     "string-width": "^4.2.0"
