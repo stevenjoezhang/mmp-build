@@ -103,7 +103,7 @@ https://github.com/markedjs/marked/blob/416003b50daea11c698b4f12ca3b92ce7e67c5cb
 
 有关 Front Matter 的仓库
 
-https://github.com/hexojs/hexo-front-matter
+https://github.com/hexojs/hexo-front-matter  
 https://github.com/jxson/front-matter
 
 ## TODO
@@ -111,3 +111,4 @@ https://github.com/jxson/front-matter
 - [x] Windows support
 - [ ] Plugins support
 - [x] Pangu.js support
+- [ ] Table alignment
