@@ -111,4 +111,4 @@ https://github.com/jxson/front-matter
 - [x] Windows support
 - [ ] Plugins support
 - [x] Pangu.js support
-- [ ] Table alignment
+- [x] Table alignment
