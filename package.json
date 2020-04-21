@@ -29,6 +29,6 @@
     "hexo-front-matter": "^1.0.0",
     "hexo-pangu": "^0.1.0",
     "highlight.js": "^9.18.1",
-    "marked": "^0.8.2"
+    "marked": "^1.0.0"
   }
 }
