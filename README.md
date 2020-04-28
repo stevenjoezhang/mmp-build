@@ -1,9 +1,7 @@
 # MMP
 
-[![Npm Version](https://img.shields.io/npm/v/mmp-build?style=flat-square)](https://npmjs.org/package/mmp-build)
-[![Npm Downloads Month](https://img.shields.io/npm/dm/mmp-build?style=flat-square)](https://npmjs.org/package/mmp-build)
-[![Npm Downloads Total](https://img.shields.io/npm/dt/mmp-build?style=flat-square)](https://npmjs.org/package/mmp-build)
-[![License](https://img.shields.io/npm/l/mmp-build?style=flat-square)](https://npmjs.org/package/mmp-build)
+[![npm-image]][npm-url]
+[![lic-image]](LICENSE)
 
 MMP 的全称是 Mimi Markdown Paper，旨在通过简单的命令将 Markdown 文件转为 TeX，再通过 `xelatex` 编译为 pdf。据研究表明，这可以将写文章的效率提升 1400%。
 
@@ -13,6 +11,10 @@ MMP 的全称是 Mimi Markdown Paper，旨在通过简单的命令将 Markdown �
 同时还需要安装 `node` 和 `npm`。
 
 ## 安装
+
+![size-image]
+[![dm-image]][npm-url]
+[![dt-image]][npm-url]
 
 执行
 ```bash
@@ -90,6 +92,8 @@ Front Matter 包含了文章的元信息。在它之后就是文章的内容，�
 在 Markdown 文件中使用 Front Matter 存储元信息是一种极为方便的做法，本项目使用的代码来源于静态博客框架 Hexo。  
 Marked 是一个将 Markdown 文档转为 html 的 Node.js 模块。在此基础上开发了 Markdown 转 TeX 的核心。
 
+https://liam.page/2020/03/30/writing-manuscript-in-Markdown-and-typesetting-with-LaTeX/
+
 ## License
 
 Released under the GNU General Public License v3  
@@ -99,7 +103,7 @@ http://www.gnu.org/licenses/gpl-3.0.html
 
 `marked` 会强制将 `&<>"'` 这些字符转码（目的是防止污染 `html`）。由于这对于 TeX 而言是不必要的，本项目使用了极为不优美的方法把这些字符换回来。
 
-https://github.com/markedjs/marked/blob/416003b50daea11c698b4f12ca3b92ce7e67c5cb/src/helpers.js#L1-L28
+https://github.com/markedjs/marked/blob/v1.0.0/src/helpers.js#L1-L28
 
 有关 Front Matter 的仓库
 
@@ -112,3 +116,12 @@ https://github.com/jxson/front-matter
 - [ ] Plugins support
 - [x] Pangu.js support
 - [x] Table alignment
+
+[npm-image]: https://img.shields.io/npm/v/mmp-build?style=flat-square
+[lic-image]: https://img.shields.io/npm/l/mmp-build?style=flat-square
+
+[size-image]: https://img.shields.io/github/languages/code-size/next-theme/mmp-build?style=flat-square
+[dm-image]: https://img.shields.io/npm/dm/mmp-build?style=flat-square
+[dt-image]: https://img.shields.io/npm/dt/mmp-build?style=flat-square
+
+[npm-url]: https://www.npmjs.com/package/mmp-build
