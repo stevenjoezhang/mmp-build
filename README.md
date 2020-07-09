@@ -34,6 +34,7 @@ author: Mimi
 date: 1984-01-24
 abstract: How to use MMP
 keywords: Markdown, TeX
+packages:
 bibfile:
   style: ieeetr
   name:
