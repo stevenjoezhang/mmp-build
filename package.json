@@ -27,7 +27,7 @@
     "chalk": "^4.0.0",
     "hexo-filter-mathjax": "^0.5.0",
     "hexo-front-matter": "^1.0.0",
-    "hexo-pangu": "^0.1.0",
+    "hexo-pangu": "^0.2.0",
     "highlight.js": "^10.0.0",
     "marked": "^1.0.0"
   }
