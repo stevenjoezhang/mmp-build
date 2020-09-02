@@ -121,7 +121,7 @@ https://github.com/jxson/front-matter
 [npm-image]: https://img.shields.io/npm/v/mmp-build?style=flat-square
 [lic-image]: https://img.shields.io/npm/l/mmp-build?style=flat-square
 
-[size-image]: https://img.shields.io/github/languages/code-size/next-theme/mmp-build?style=flat-square
+[size-image]: https://img.shields.io/github/languages/code-size/stevenjoezhang/mmp-build?style=flat-square
 [dm-image]: https://img.shields.io/npm/dm/mmp-build?style=flat-square
 [dt-image]: https://img.shields.io/npm/dt/mmp-build?style=flat-square
 
