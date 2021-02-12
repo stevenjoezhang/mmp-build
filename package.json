@@ -27,7 +27,7 @@
     "hexo-front-matter": "^2.0.0",
     "hexo-pangu": "^0.2.0",
     "highlight.js": "^10.3.1",
-    "marked": "1.2.2"
+    "marked": "2.0.0"
   },
   "devDependencies": {
     "@next-theme/eslint-config": "0.0.2",
