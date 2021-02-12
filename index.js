@@ -1,5 +1,5 @@
 const help = `
-Mimi Markdown Paper v${require("./package.json").version}
+Mimi Markdown Paper v${require('./package.json').version}
 
 usage: mmp <command> <name> [<args>]
 
@@ -23,12 +23,12 @@ name: name of the workspace, must be the same as .md file
 `;
 
 function entry() {
-  let arg = process.argv.slice(2);
+  const arg = process.argv.slice(2);
   switch (arg.shift()) {
-    case "init" : require("./lib/init")(arg) ; break;
-    case "build": require("./lib/build")(arg); break;
-    case "clean": require("./lib/clean")(arg); break;
-    default     : console.log(help)          ; break;
+    case 'init' : require('./lib/init')(arg); break;
+    case 'build': require('./lib/build')(arg); break;
+    case 'clean': require('./lib/clean')(arg); break;
+    default : console.log(help); break;
   }
 }
 

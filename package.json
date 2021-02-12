@@ -4,12 +4,10 @@
   "description": "Convert markdown-formatted documents to TeX.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "lint": "eslint index.js lib/"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/stevenjoezhang/mmp-build"
-  },
+  "repository": "stevenjoezhang/mmp-build",
   "keywords": [
     "markdown",
     "tex"
@@ -30,5 +28,9 @@
     "hexo-pangu": "^0.2.0",
     "highlight.js": "^10.3.1",
     "marked": "1.2.2"
+  },
+  "devDependencies": {
+    "@next-theme/eslint-config": "0.0.2",
+    "eslint": "7.17.0"
   }
 }

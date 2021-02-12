@@ -1,0 +1,7 @@
+{
+  "extends": "@next-theme",
+  "root": true,
+  "rules": {
+    "no-console": 0
+  }
+}
