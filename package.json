@@ -1,6 +1,6 @@
 {
   "name": "mmp-build",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Convert markdown-formatted documents to TeX.",
   "main": "index.js",
   "scripts": {
