@@ -1,5 +1,12 @@
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const { version } = JSON.parse(fs.readFileSync(path.join(__dirname, './package.json')));
+
 const help = `
-Mimi Markdown Paper v${require('./package.json').version}
+Mimi Markdown Paper v${version}
 
 usage: mmp <command> <name> [<args>]
 
@@ -22,22 +29,27 @@ command: init | build | clean
 name: name of the workspace, must be the same as .md file
 `;
 
-function entry() {
+export default async function() {
   const arg = process.argv.slice(2);
   switch (arg.shift()) {
-    case 'init':
-      require('./lib/init')(arg);
+    case 'init': {
+      const init = await import('./lib/init.js');
+      init.default(arg);
       break;
-    case 'build':
-      require('./lib/build')(arg);
+    }
+    case 'build': {
+      const build = await import('./lib/build.js');
+      build.default(arg);
       break;
-    case 'clean':
-      require('./lib/clean')(arg);
+    }
+    case 'clean': {
+      const clean = await import('./lib/clean.js');
+      clean.default(arg);
       break;
-    default:
+    }
+    default: {
       console.log(help);
       break;
+    }
   }
 }
-
-module.exports = entry;

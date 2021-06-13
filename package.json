@@ -3,6 +3,7 @@
   "version": "0.0.14",
   "description": "Convert markdown-formatted documents to TeX.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "node index.js",
     "lint": "eslint index.js lib/"
@@ -13,7 +14,7 @@
     "tex"
   ],
   "bin": {
-    "mmp": "./bin/mmp"
+    "mmp": "./bin/mmp.mjs"
   },
   "author": "Mimi <stevenjoezhang@gmail.com> (https://zhangshuqiao.org)",
   "license": "GPL-3.0-or-later",
