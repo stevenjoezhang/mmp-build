@@ -27,7 +27,7 @@
     "hexo-filter-mathjax": "^0.7.0",
     "hexo-front-matter": "^2.0.0",
     "hexo-pangu": "^0.2.0",
-    "highlight.js": "^10.7.1",
+    "highlight.js": "^11.0.0",
     "marked": "2.1.0"
   },
   "devDependencies": {
