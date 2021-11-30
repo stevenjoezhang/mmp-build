@@ -2,11 +2,12 @@
   "name": "mmp-build",
   "version": "0.1.0",
   "description": "Convert markdown-formatted documents to TeX.",
-  "main": "index.js",
+  "main": "built/index.js",
   "type": "module",
   "scripts": {
-    "start": "node index.js",
-    "lint": "eslint index.js lib/"
+    "start": "node built/index.js",
+    "lint": "eslint src --ext ts",
+    "build": "tsc -p ./"
   },
   "repository": "stevenjoezhang/mmp-build",
   "keywords": [
@@ -34,6 +35,8 @@
     "@next-theme/eslint-config": "0.0.3",
     "@types/marked": "^3.0.2",
     "@types/node": "^16.11.6",
+    "@typescript-eslint/eslint-plugin": "^5.5.0",
+    "@typescript-eslint/parser": "^5.5.0",
     "eslint": "8.1.0",
     "typescript": "^4.4.4"
   }
