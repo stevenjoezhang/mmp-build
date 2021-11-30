@@ -3,7 +3,7 @@ import { spawnSync } from 'child_process';
 import generator from './generator/index.js';
 import pc from 'picocolors';
 
-function explorer(file) {
+function explorer(file: string) {
   switch (type()) {
     case 'Windows_NT':
       spawnSync('explorer', [`/select,${file}`]);
@@ -17,7 +17,7 @@ function explorer(file) {
   }
 }
 
-function texmaker(name, config, bib) {
+function texmaker(name: string, config, bib: boolean) {
   const recipe = {
     xelatex: config.quiet
       ? ['xelatex', ['-interaction=batchmode', name]]
@@ -43,7 +43,7 @@ function texmaker(name, config, bib) {
   explorer(`${name}.pdf`);
 }
 
-export default async function(arg) {
+export default async function(arg: string[]) {
   const name = arg.shift();
   const config = {
     quiet: arg.includes('--quiet') || arg.includes('-q'),

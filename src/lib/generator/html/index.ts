@@ -3,7 +3,7 @@ import { Lexer } from '../marked.js';
 import hljs from 'highlight.js';
 
 marked.setOptions({
-  highlight: function(code, language) {
+  highlight: function(code: string, language: string) {
     language = hljs.getLanguage(language) ? language : 'plaintext';
     return hljs.highlight(code, { language }).value;
   }
@@ -20,7 +20,7 @@ import mathjax from 'hexo-filter-mathjax/lib/filter.js';
 const renderer = mathjax(config);
 import pangu from 'hexo-pangu/lib/filter.js';
 
-export default function(content) {
+export default function(content: string) {
   const opt = marked.defaults;
   const data = marked.Parser.parse(Lexer.lex(content, opt), opt);
   return pangu(renderer(data));

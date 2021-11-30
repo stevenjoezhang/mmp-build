@@ -1,7 +1,7 @@
 import fs from 'fs';
 import { parse } from 'hexo-front-matter';
 
-async function generator(name, config) {
+async function generator(name: string, config) {
   const file = fs.readFileSync(`${name}.md`);
   const post = parse(file.toString());
 

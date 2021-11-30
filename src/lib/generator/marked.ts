@@ -11,7 +11,7 @@ class Lexer extends marked.Lexer {
       .getRegex();
   }
 
-  static lex(src, options) {
+  static lex(src: string, options) {
     const lexer = new Lexer(options);
     return lexer.lex(src);
   }

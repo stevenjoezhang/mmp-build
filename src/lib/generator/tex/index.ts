@@ -3,7 +3,7 @@ import { Lexer } from '../marked.js';
 const placeholder = '\uFFFC';
 
 class Renderer extends marked.Renderer {
-  code(code, infostring, escaped) {
+  code(code: string, infostring: string | undefined, escaped) {
     const lang = (infostring || '').match(/\S*/)[0];
     return `\\begin{lstlisting}[numbers=left, numberstyle=\\tiny, ${lang ? `language=${lang},` : ''}
 keywordstyle=\\color{red}, commentstyle=\\color{gray},
@@ -13,11 +13,11 @@ ${code}
 \\end{lstlisting}\n`;
   }
 
-  blockquote(quote) {
+  blockquote(quote: string) {
     return `\\begin{quotation}\n\\textit{${quote}}\\end{quotation}\n`;
   }
 
-  heading(text, level, raw, slugger) {
+  heading(text: string, level: number, raw, slugger) {
     const levels = ['chapter', 'part', 'section', 'subsection', 'subsubsection', 'paragraph', 'subparagraph']; //chapter works in \documentclass{report}
     return `\\${levels[level]}{${text}}\n`;
   }
@@ -26,25 +26,25 @@ ${code}
     return '\\begin{center}\\rule{0.5\\linewidth}{0.5pt}\\end{center}';
   }
 
-  list(body, ordered, start) {
+  list(body: string, ordered: boolean, start: number) {
     const type = ordered ? 'enumerate' : 'itemize';
     const startatt = ordered && start !== 1 ? `\\setcounter{enumi}{${start}}\n` : '';
     return `\\begin{${type}}\n${startatt}${body}\\end{${type}}\n`;
   }
 
-  listitem(text) {
+  listitem(text: string) {
     return `\\item ${text}\n`;
   }
 
-  checkbox(checked) {
+  checkbox(checked: boolean) {
     return checked ? '[\\rlap{\\raisebox{2pt}{\\large\\hspace{1pt}\\ding{51}}}$\\square$]' : '[$\\square$]';
   }
 
-  paragraph(text) {
+  paragraph(text: string) {
     return `\n${text}\n`;
   }
 
-  table(header, body) {
+  table(header: string, body: string) {
     const reg = new RegExp(placeholder + '\\S' + placeholder, 'g');
     const align = header.match(reg).join('|').replace(new RegExp(placeholder, 'g'), '');
     return `\\begin{longtable}{|${align}|}
@@ -60,25 +60,25 @@ ${body}
 \\end{longtable}\n`;
   }
 
-  tablerow(content) {
+  tablerow(content: string) {
     return `${content.replace(/&\s$/, '\\\\')}\n`;
   }
 
-  tablecell(content, flags) {
+  tablecell(content: string, flags) {
     if (flags.header) content += placeholder + (flags.align || 'left')[0] + placeholder;
     return content + ' & ';
   }
 
   // span level renderer
-  strong(text) {
+  strong(text: string) {
     return `\\textbf{${text}}`;
   }
 
-  em(text) {
+  em(text: string) {
     return `\\textit{${text}}`;
   }
 
-  codespan(text) {
+  codespan(text: string) {
     return `\\texttt{\\textcolor{blue}{${text}}}`;
   }
 
@@ -86,15 +86,15 @@ ${body}
     return ' \\\\';
   }
 
-  del(text) {
+  del(text: string) {
     return `\\sout{${text}}`;
   }
 
-  link(href, title, text) {
+  link(href: string, title: string, text: string) {
     return `\\href{${href}}{${text}}`;
   }
 
-  image(href, title, text) {
+  image(href: string, title: string, text: string) {
     return `\\begin{center}
 \\includegraphics[width=\\columnwidth]{${href}}
 \\captionof{figure}{${text}}
@@ -107,7 +107,7 @@ marked.setOptions({
   renderer: new Renderer()
 });
 
-function unescape(content) {
+function unescape(content: string) {
   return content
     .replace(/&amp;/g, '&')
     .replace(/&lt;/g, '<')
@@ -116,7 +116,7 @@ function unescape(content) {
     .replace(/&#39;/g, '\'');
 }
 
-export default function(content) {
+export default function(content: string) {
   const opt = marked.defaults;
   const data = marked.Parser.parse(Lexer.lex(content, opt), opt);
   return unescape(data);
