@@ -1,6 +1,6 @@
 {
   "name": "mmp-build",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Convert markdown-formatted documents to TeX.",
   "main": "built/index.js",
   "type": "module",
@@ -26,18 +26,18 @@
   "dependencies": {
     "hexo-filter-mathjax": "^0.9.0",
     "hexo-front-matter": "^3.0.0",
-    "hexo-pangu": "^0.2.0",
-    "highlight.js": "^11.0.0",
-    "marked": "4.0.10",
+    "hexo-pangu": "^0.2.2",
+    "highlight.js": "^11.6.0",
+    "marked": "4.1.1",
     "picocolors": "^1.0.0"
   },
   "devDependencies": {
     "@next-theme/eslint-config": "0.0.3",
     "@types/marked": "4.0.7",
-    "@types/node": "^16.11.6",
-    "@typescript-eslint/eslint-plugin": "^5.5.0",
-    "@typescript-eslint/parser": "^5.5.0",
+    "@types/node": "^18.8.1",
+    "@typescript-eslint/eslint-plugin": "^5.39.0",
+    "@typescript-eslint/parser": "^5.39.0",
     "eslint": "8.24.0",
-    "typescript": "^4.4.4"
+    "typescript": "^4.8.4"
   }
 }
