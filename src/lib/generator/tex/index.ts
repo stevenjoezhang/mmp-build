@@ -1,4 +1,4 @@
-import marked from 'marked';
+import { marked } from 'marked';
 import { Lexer } from '../marked.js';
 const placeholder = '\uFFFC';
 
