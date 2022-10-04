@@ -79,7 +79,7 @@ ${body}
   }
 
   codespan(text: string) {
-    return `\\texttt{\\textcolor{blue}{${text}}}`;
+    return `\\texttt{\\textcolor{blue}{\\detokenize{${text}}}}`;
   }
 
   br() {
