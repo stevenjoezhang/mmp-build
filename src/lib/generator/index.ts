@@ -1,42 +1,13 @@
 import fs from 'fs';
 import { parse } from 'hexo-front-matter';
+import { Post } from './post';
 
-async function generator(name: string, config) {
+async function generator(name: string, htmlMode: boolean) {
   const file = fs.readFileSync(`${name}.md`);
-  const post = parse(file.toString());
+  const post = new Post(parse(file.toString()), name);
 
-  post.getPackages = () => {
-    if (!post.packages) return '';
-    const content = typeof post.packages === 'string' ? post.packages : post.packages.join(', ');
-    return `\\usepackage{${content}}`;
-  };
-  post.getDateString = () => {
-    const date = post.date || new Date();
-    return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
-  };
-  post.getAbstract = () => {
-    if (!post.abstract) return '';
-    return `\\begin{abstract}
-${post.abstract}
-\\end{abstract}`;
-  };
-  post.getKeywords = () => {
-    if (!post.keywords) return '';
-    const content = typeof post.keywords === 'string' ? post.keywords : post.keywords.join(', ');
-    return `\\begin{center}
-\\small
-\\textbf{\\textit{关键词：}}{${content}}
-\\end{center}`;
-  };
-  post.getBibItem = () => {
-    if (!post.bibfile) return '';
-    return `\\newpage
-\\bibliographystyle{${post.bibfile.style || 'ieeetr'}}
-\\bibliography{${post.bibfile.name || name}}`;
-  };
-
-  const { _content } = post;
-  if (config.html) {
+  const _content = post.getRawContent();
+  if (htmlMode) {
     const html = await import('./html/index.js');
     const htmlTemplate = await import('./html/template.js');
     post.content = html.default(_content);
@@ -49,7 +20,7 @@ ${post.abstract}
     const result = texTemplate.default(post);
     fs.writeFileSync(`${name}.tex`, result);
   }
-  return post;
+  return post.isBibEnabled();
 }
 
 export default generator;

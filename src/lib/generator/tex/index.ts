@@ -1,9 +1,8 @@
 import { marked } from 'marked';
-import { Lexer } from '../marked.js';
 const placeholder = '\uFFFC';
 
 class Renderer extends marked.Renderer {
-  code(code: string, infostring: string | undefined, escaped) {
+  code(code: string, infostring: string | undefined, escaped: boolean) {
     const lang = (infostring || '').match(/\S*/)[0];
     return `\\begin{lstlisting}[numbers=left, numberstyle=\\tiny, ${lang ? `language=${lang},` : ''}
 keywordstyle=\\color{red}, commentstyle=\\color{gray},
@@ -17,7 +16,7 @@ ${code}
     return `\\begin{quotation}\n\\textit{${quote}}\\end{quotation}\n`;
   }
 
-  heading(text: string, level: number, raw, slugger) {
+  heading(text: string, level: number, raw: string, slugger: marked.Slugger) {
     const levels = ['chapter', 'part', 'section', 'subsection', 'subsubsection', 'paragraph', 'subparagraph']; //chapter works in \documentclass{report}
     return `\\${levels[level]}{${text}}\n`;
   }
@@ -118,6 +117,6 @@ function unescape(content: string) {
 
 export default function(content: string) {
   const opt = marked.defaults;
-  const data = marked.Parser.parse(Lexer.lex(content, opt), opt);
+  const data = marked.Parser.parse(marked.Lexer.lex(content, opt), opt);
   return unescape(data);
 }

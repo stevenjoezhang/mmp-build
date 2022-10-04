@@ -1,4 +1,6 @@
-export default function(post) {
+import { Post } from '../post';
+
+export default function(post: Post) {
   return `\\documentclass[12pt]{article}
 
 \\usepackage{ctex, amsmath, amsthm, amssymb, geometry, perpage, graphicx, hyperref, longtable, ulem, listings, xcolor, pifont, physics}
@@ -17,8 +19,8 @@ breaklines=true,
 postbreak=\\mbox{\\textcolor{red}{$\\hookrightarrow$}\\space}
 }
 
-\\title{${post.title || ''}}
-\\author{${post.author || ''}}
+\\title{${post.getTitle()}}
+\\author{${post.getAuthor()}}
 \\date{${post.getDateString()}}
 
 \\begin{document}

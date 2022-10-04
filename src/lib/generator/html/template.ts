@@ -1,16 +1,15 @@
 import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
 import css from 'hexo-filter-mathjax/lib/css.js';
+import { Post } from '../post';
+// FIXME: requires commonjs
+const highlight = require.resolve('highlight.js/styles/xcode.css');
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-
-export default function(post) {
+export default function(post: Post) {
   return `<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>${post.title || ''}</title>
+<title>${post.getTitle()}</title>
 <style>
 body {
   font-size: large;
@@ -19,7 +18,7 @@ pre {
   overflow-x: scroll;
 }
 ${css}
-${fs.readFileSync(path.join(__dirname, '../../../node_modules/highlight.js/styles/xcode.css'))}
+${fs.readFileSync(highlight)}
 </style>
 <!-- http://epsilonexpert.com/e/user_questions/html_snippets.php?i=1 -->
 <style>

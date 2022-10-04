@@ -3,6 +3,17 @@ import { spawnSync } from 'child_process';
 import generator from './generator/index.js';
 import pc from 'picocolors';
 
+interface Config {
+  quiet: boolean;
+  tex  : boolean;
+  html : boolean;
+}
+
+interface Recipe {
+  xelatex: [string, string[]];
+  bibtex : [string, string[]];
+}
+
 function explorer(file: string) {
   switch (type()) {
     case 'Windows_NT':
@@ -17,8 +28,8 @@ function explorer(file: string) {
   }
 }
 
-function texmaker(name: string, config, bib: boolean) {
-  const recipe = {
+function texmaker(name: string, config: Config, bib: boolean) {
+  const recipe: Recipe = {
     xelatex: config.quiet
       ? ['xelatex', ['-interaction=batchmode', name]]
       : ['texfot', ['xelatex', '-interaction=nonstopmode', '-file-line-error', name]],
@@ -45,12 +56,16 @@ function texmaker(name: string, config, bib: boolean) {
 
 export default async function(arg: string[]) {
   const name = arg.shift();
+  if (!name) {
+    console.error('Missing filename.');
+    process.exit();
+  }
   const config = {
     quiet: arg.includes('--quiet') || arg.includes('-q'),
     tex  : arg.includes('--tex') || arg.includes('-t'),
     html : arg.includes('--html') || arg.includes('-h')
   };
-  const post = await generator(name, config);
+  const enableBibfile = await generator(name, config.html);
   if (config.html) {
     console.log(pc.magenta('HTML generating done. Enjoy!'));
     process.exit();
@@ -61,5 +76,5 @@ export default async function(arg: string[]) {
   } else {
     console.log(pc.magenta('TeX generating done. Start building...'));
   }
-  texmaker(name, config, post.bibfile);
+  texmaker(name, config, enableBibfile);
 }
