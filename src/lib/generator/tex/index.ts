@@ -1,4 +1,5 @@
 import { marked } from 'marked';
+import { Lexer } from '../marked.js';
 const placeholder = '\uFFFC';
 
 class Renderer extends marked.Renderer {
@@ -117,6 +118,6 @@ function unescape(content: string) {
 
 export default function(content: string) {
   const opt = marked.defaults;
-  const data = marked.Parser.parse(marked.Lexer.lex(content, opt), opt);
+  const data = marked.Parser.parse(Lexer.lex(content, opt), opt);
   return unescape(data);
 }

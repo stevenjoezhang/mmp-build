@@ -1,4 +1,5 @@
 import { marked } from 'marked';
+import { Lexer } from '../marked.js';
 import hljs from 'highlight.js';
 
 marked.setOptions({
@@ -21,6 +22,6 @@ import pangu from 'hexo-pangu/lib/filter.js';
 
 export default function(content: string) {
   const opt = marked.defaults;
-  const data = marked.Parser.parse(marked.Lexer.lex(content, opt), opt);
+  const data = marked.Parser.parse(Lexer.lex(content, opt), opt);
   return pangu(renderer(data));
 }

@@ -1,6 +1,6 @@
 import fs from 'fs';
 import { parse } from 'hexo-front-matter';
-import { Post } from './post';
+import { Post } from './post.js';
 
 async function generator(name: string, htmlMode: boolean) {
   const file = fs.readFileSync(`${name}.md`);
