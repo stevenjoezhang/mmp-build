@@ -64,7 +64,10 @@ ${body}
     return `${content.replace(/&\s$/, '\\\\')}\n`;
   }
 
-  tablecell(content: string, flags) {
+  tablecell(content: string, flags: {
+    header: boolean;
+    align : 'center' | 'left' | 'right' | null;
+  }) {
     if (flags.header) content += placeholder + (flags.align || 'left')[0] + placeholder;
     return content + ' & ';
   }

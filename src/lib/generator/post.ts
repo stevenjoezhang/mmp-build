@@ -3,7 +3,7 @@ export class Post {
   name: string;
   content: string;
 
-  constructor(post, name) {
+  constructor(post: any, name: string) {
     this.post = post;
     this.name = name;
   }
