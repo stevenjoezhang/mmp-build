@@ -28,7 +28,7 @@
     "hexo-front-matter": "^3.0.0",
     "hexo-pangu": "^0.2.2",
     "highlight.js": "^11.6.0",
-    "marked": "4.1.1",
+    "marked": "9.1.6",
     "picocolors": "^1.0.0"
   },
   "devDependencies": {
