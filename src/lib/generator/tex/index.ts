@@ -106,6 +106,12 @@ ${body}
 ${title ? `\\label{${title}}` : ''}
 \\end{center}\n`;
   }
+
+  text(string: string) {
+    // Replace _ with \_ in non-code text
+    string = string.replace(/(_)/g, '\\$1');
+    return string;
+  }
 }
 
 marked.setOptions({
