@@ -14,7 +14,9 @@ ${code}
   }
 
   blockquote(quote: string) {
-    return `\\begin{quotation}\n\\textit{${quote}}\\end{quotation}\n`;
+    // Add LaTeX line breaks if there are multiple lines in the quote
+    // quote = quote.replace(/\n/g, '\\\\');
+    return `\\begin{tcolorbox}\n{\\itshape\\color{gray}${quote}}\\end{tcolorbox}\n`;
   }
 
   heading(text: string, level: number, raw: string, slugger: marked.Slugger) {

@@ -3,7 +3,7 @@ import { Post } from '../post';
 export default function(post: Post) {
   return `\\documentclass[12pt]{article}
 
-\\usepackage{ctex, amsmath, amsthm, amssymb, geometry, perpage, graphicx, hyperref, longtable, ulem, listings, xcolor, pifont, physics}
+\\usepackage{ctex, amsmath, amsthm, amssymb, geometry, perpage, graphicx, hyperref, longtable, ulem, listings, xcolor, pifont, physics, tcolorbox}
 ${post.getPackages()}
 \\usepackage[font={bf, footnotesize}, textfont=md, hypcap=false]{caption}
 
